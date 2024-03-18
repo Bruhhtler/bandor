@@ -1,0 +1,26 @@
+// In a real scenario, you would fetch products data from a server and dynamically populate this section
+const productsSection = document.querySelector('.products');
+
+// Dummy product data for demonstration
+const products = [
+    { name: 'Product 1', price: '$19.99', image: 'product1.jpg' },
+    { name: 'Product 2', price: '$29.99', image: 'product2.jpg' },
+    { name: 'Product 3', price: '$39.99', image: 'product3.jpg' },
+];
+
+// Function to display products
+function displayProducts() {
+    products.forEach(product => {
+        const productDiv = document.createElement('div');
+        productDiv.classList.add('product');
+        productDiv.innerHTML = `
+            <img src="images/${product.image}" alt="${product.name}">
+            <h3>${product.name}</h3>
+            <p>${product.price}</p>
+        `;
+        productsSection.appendChild(productDiv);
+    });
+}
+
+// Call the function to display products
+displayProducts();
